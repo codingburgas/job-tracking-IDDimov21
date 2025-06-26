@@ -1,0 +1,28 @@
+import { Injectable } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
+import { Observable } from 'rxjs';
+import { Application, UpdateApplicationStatusRequest } from '../models/application.models';
+import { environment } from '../../../environments/environment';
+
+@Injectable({
+  providedIn: 'root'
+})
+export class ApplicationService {
+  constructor(private http: HttpClient) {}
+
+  getApplications(): Observable<Application[]> {
+    return this.http.get<Application[]>(`${environment.apiUrl}/applications`);
+  }
+
+  getJobApplications(jobId: number): Observable<Application[]> {
+    return this.http.get<Application[]>(`${environment.apiUrl}/applications/job/${jobId}`);
+  }
+
+  createApplication(jobId: number): Observable<Application> {
+    return this.http.post<Application>(`${environment.apiUrl}/applications/job/${jobId}`, {});
+  }
+
+  updateApplicationStatus(id: number, request: UpdateApplicationStatusRequest): Observable<Application> {
+    return this.http.put<Application>(`${environment.apiUrl}/applications/${id}/status`, request);
+  }
+}
