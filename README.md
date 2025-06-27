@@ -1,145 +1,178 @@
-# Job Search & Application System
+# JobPortal - Job Search and Application System
 
-A comprehensive web application for job searching and application management with separate interfaces for job seekers and administrators.
+A full-stack job portal application built with Angular frontend and ASP.NET Core backend, featuring modern UI design and comprehensive functionality for both job seekers and administrators.
 
 ## Features
 
 ### For Users (Job Seekers)
-- User registration and authentication
-- Browse active job postings
-- Apply to jobs with one-click application
-- Track application status (Submitted, Selected for Interview, Rejected)
-- View application history
-- Responsive design for all devices
+- **Account Management**: Register and login to personal accounts
+- **Job Search**: Browse and search through active job postings with filters
+- **Job Applications**: Apply to jobs with one-click application system
+- **Application Tracking**: View and track status of submitted applications
+- **Modern UI**: Clean, responsive design inspired by leading job portals
 
 ### For Administrators
-- Pre-configured admin account (username: `admin`, password: `admin123`)
-- Create, edit, and delete job postings
-- Manage job status (Active/Inactive)
-- View all applications for each job
-- Update application status
-- Comprehensive dashboard for job management
+- **Job Management**: Create, edit, and delete job postings
+- **Application Management**: View and manage all job applications
+- **Status Updates**: Update application statuses (Submitted, Selected for Interview, Rejected)
+- **Admin Dashboard**: Comprehensive overview of jobs and applications
 
 ## Technology Stack
 
 ### Backend (API)
-- **Framework**: ASP.NET Core 8.0 Web API
-- **Database**: SQLite with Entity Framework Core
-- **Authentication**: JWT Bearer tokens
-- **Password Hashing**: BCrypt
-- **Architecture**: Clean architecture with services, DTOs, and controllers
+- **ASP.NET Core 8.0** - Web API framework
+- **Entity Framework Core** - ORM with SQLite database
+- **JWT Authentication** - Secure user authentication
+- **BCrypt** - Password hashing
+- **Swagger** - API documentation
 
 ### Frontend (WEB)
-- **Framework**: Angular 18
-- **Styling**: Custom CSS with modern design system
-- **State Management**: RxJS Observables
-- **Routing**: Angular Router with lazy loading
-- **Authentication**: JWT interceptors and guards
-- **Forms**: Reactive forms with validation
+- **Angular 17** - Modern web framework
+- **TypeScript** - Type-safe JavaScript
+- **Tailwind CSS** - Utility-first CSS framework
+- **Reactive Forms** - Form handling and validation
+- **RxJS** - Reactive programming
+
+## Project Structure
+
+```
+JobPortal/
+├── API/
+│   └── JobPortal.API/
+│       ├── Controllers/          # API controllers
+│       ├── Models/              # Data models
+│       ├── DTOs/                # Data transfer objects
+│       ├── Services/            # Business logic services
+│       ├── Data/                # Database context and seeding
+│       └── Program.cs           # Application startup
+├── WEB/
+│   └── src/
+│       ├── app/
+│       │   ├── components/      # Reusable components
+│       │   ├── pages/           # Page components
+│       │   ├── services/        # API services
+│       │   ├── models/          # TypeScript models
+│       │   ├── guards/          # Route guards
+│       │   └── interceptors/    # HTTP interceptors
+│       └── environments/        # Environment configurations
+└── JobPortal.sln               # Visual Studio solution file
+```
 
 ## Getting Started
 
 ### Prerequisites
 - .NET 8.0 SDK
 - Node.js (v18 or higher)
-- Angular CLI
+- Visual Studio or JetBrains Rider
 
-### Running the Application
+### Setup Instructions
 
-#### Backend API
-1. Navigate to the API directory:
+1. **Clone the repository**
    ```bash
-   cd API
+   git clone <repository-url>
+   cd JobPortal
    ```
 
-2. Restore dependencies and run:
+2. **Backend Setup**
    ```bash
+   cd API/JobPortal.API
    dotnet restore
    dotnet run
    ```
-   
-   The API will be available at `http://localhost:5000`
+   The API will be available at `https://localhost:7001`
 
-#### Frontend Web Application
-1. Navigate to the WEB directory:
+3. **Frontend Setup**
    ```bash
    cd WEB
-   ```
-
-2. Install dependencies:
-   ```bash
    npm install
-   ```
-
-3. Start the development server:
-   ```bash
    npm start
    ```
-   
-   The web application will be available at `http://localhost:4200`
+   The Angular app will be available at `http://localhost:4200`
 
 ### Default Admin Account
-- **Username**: `admin`
-- **Password**: `admin123`
+- **Username**: admin
+- **Password**: admin123
 
-## Project Structure
+## API Endpoints
 
-```
-├── API/                          # Backend Web API
-│   └── JobSearchSystem.API/
-│       ├── Controllers/          # API Controllers
-│       ├── Services/            # Business logic services
-│       ├── Models/              # Entity models
-│       ├── DTOs/                # Data transfer objects
-│       ├── Data/                # Database context
-│       └── Program.cs           # Application entry point
-│
-└── WEB/                         # Frontend Angular Application
-    ├── src/
-    │   ├── app/
-    │   │   ├── core/            # Core services, guards, interceptors
-    │   │   ├── features/        # Feature modules (auth, dashboard, admin)
-    │   │   ├── shared/          # Shared components
-    │   │   └── app.component.ts # Root component
-    │   ├── environments/        # Environment configurations
-    │   └── styles.css          # Global styles
-    └── package.json
-```
+### Authentication
+- `POST /api/auth/register` - Register new user
+- `POST /api/auth/login` - User login
 
-## Key Features Implementation
+### Jobs
+- `GET /api/jobs` - Get all jobs (with search and filters)
+- `GET /api/jobs/{id}` - Get job by ID
+- `POST /api/jobs` - Create job (Admin only)
+- `PUT /api/jobs/{id}` - Update job (Admin only)
+- `DELETE /api/jobs/{id}` - Delete job (Admin only)
 
-### Security
-- JWT-based authentication
-- Role-based access control (USER/ADMIN)
-- Password hashing with BCrypt
-- CORS configuration for cross-origin requests
+### Applications
+- `POST /api/applications/submit/{jobId}` - Submit application
+- `GET /api/applications/my-applications` - Get user's applications
+- `GET /api/applications` - Get all applications (Admin only)
+- `PUT /api/applications/{id}/status` - Update application status (Admin only)
 
-### Database Design
-- Users table with role-based access
-- Job postings with status management
-- Applications with unique constraints (one application per user per job)
-- Foreign key relationships with cascading deletes
+## Features in Detail
 
-### User Experience
-- Modern, responsive design
-- Intuitive navigation with role-based menus
-- Real-time status updates
-- Form validation with error messaging
-- Loading states and error handling
+### User Authentication & Authorization
+- JWT-based authentication with role-based access control
+- Secure password hashing using BCrypt
+- Protected routes and API endpoints based on user roles
 
-### Business Logic
-- Users can only apply once per job
-- Only active jobs accept applications
-- Administrators cannot submit applications
-- Application status workflow management
+### Job Management
+- Create, read, update, and delete job postings
+- Rich job information including title, company, description, salary, type, location
+- Job status management (Active/Inactive)
+- Search and filtering capabilities
 
-## Development
+### Application System
+- One-click job application for users
+- Prevents duplicate applications to the same job
+- Application status tracking and management
+- Admin interface for managing all applications
 
-The application uses a clean architecture approach with:
-- Separation of concerns between frontend and backend
-- Service-based business logic
-- DTO pattern for API communication
-- Reactive programming with RxJS
-- Component-based UI architecture
+### Modern UI/UX
+- Responsive design that works on all devices
+- Clean, professional interface inspired by leading job portals
+- Intuitive navigation and user experience
+- Modern color scheme with orange/gradient theme
 
-Both the API and Web projects are structured for maintainability and scalability, with proper error handling, validation, and user feedback throughout the application.
+## Database Schema
+
+### Users
+- User profiles with authentication credentials
+- Role-based access (User/Admin)
+- Personal information storage
+
+### JobPostings
+- Comprehensive job information
+- Company details and requirements
+- Status management
+
+### Applications
+- Links users to job postings
+- Application status tracking
+- Submission and update timestamps
+
+## Security Features
+- Password hashing and salting
+- JWT token-based authentication
+- Role-based authorization
+- CORS configuration for secure cross-origin requests
+- Input validation and sanitization
+
+## Development Notes
+- Clean architecture with separation of concerns
+- Repository pattern with Entity Framework
+- Reactive programming with RxJS in Angular
+- Comprehensive error handling and validation
+- Modern development practices and patterns
+
+## Contributing
+1. Fork the repository
+2. Create a feature branch
+3. Make your changes
+4. Submit a pull request
+
+## License
+This project is licensed under the MIT License.
