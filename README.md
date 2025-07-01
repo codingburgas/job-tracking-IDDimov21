@@ -1,178 +1,183 @@
-# JobFindan - Job Search and Application System
+# 🎯 JobFindan – Job Search & Application Platform
 
-A full-stack job portal application built with Angular frontend and ASP.NET Core backend, featuring modern UI design and comprehensive functionality for both job seekers and administrators.
+A modern, full-stack **job portal application** built with **Angular** and **ASP.NET Core**, designed for job seekers and administrators. It features a clean UI, intuitive UX, and robust functionalities inspired by leading job platforms.
 
-## Features
+---
 
-### For Users (Job Seekers)
-- **Account Management**: Register and login to personal accounts
-- **Job Search**: Browse and search through active job postings with filters
-- **Job Applications**: Apply to jobs with one-click application system
-- **Application Tracking**: View and track status of submitted applications
-- **Modern UI**: Clean, responsive design inspired by leading job portals
+## 🚀 Features
 
-### For Administrators
-- **Job Management**: Create, edit, and delete job postings
-- **Application Management**: View and manage all job applications
-- **Status Updates**: Update application statuses (Submitted, Selected for Interview, Rejected)
-- **Admin Dashboard**: Comprehensive overview of jobs and applications
+### 👤 For Job Seekers
+- 🔐 Account Management – Register/login securely  
+- 🔎 Job Search – Browse and filter job listings  
+- 📩 Apply Easily – One-click job application system  
+- 📊 Application Tracking – View application statuses  
+- 🎨 Modern UI – Responsive, sleek, and intuitive design  
 
-## Technology Stack
+### 🛠️ For Administrators
+- 📝 Job Management – Create, edit, delete job listings  
+- 📁 Application Review – View and manage all applications  
+- 🔄 Status Updates – Update application statuses  
+- 📊 Dashboard – Visual overview of jobs & applicants  
 
-### Backend (API)
-- **ASP.NET Core 8.0** - Web API framework
-- **Entity Framework Core** - ORM with SQLite database
-- **JWT Authentication** - Secure user authentication
-- **BCrypt** - Password hashing
-- **Swagger** - API documentation
+---
 
-### Frontend (WEB)
-- **Angular 17** - Modern web framework
-- **TypeScript** - Type-safe JavaScript
-- **Tailwind CSS** - Utility-first CSS framework
-- **Reactive Forms** - Form handling and validation
-- **RxJS** - Reactive programming
+## 🧰 Tech Stack
 
-## Project Structure
+### 🔙 Backend
+- **ASP.NET Core 8.0** – API framework  
+- **Entity Framework Core** – ORM + SQLite  
+- **JWT Auth + BCrypt** – Secure login & password hashing  
+- **Swagger** – Auto-generated API docs  
 
-```
+### 🌐 Frontend
+- **Angular 17** – Component-based frontend framework  
+- **Tailwind CSS** – Utility-first CSS  
+- **TypeScript** – Strictly typed JavaScript  
+- **RxJS** – Reactive programming  
+- **Reactive Forms** – Robust form handling  
+
+---
+
+## 📁 Project Structure
+
 JobFindan/
 ├── API/
-│   └── JobFindan.API/
-│       ├── Controllers/          # API controllers
-│       ├── Models/              # Data models
-│       ├── DTOs/                # Data transfer objects
-│       ├── Services/            # Business logic services
-│       ├── Data/                # Database context and seeding
-│       └── Program.cs           # Application startup
+│ └── JobFindan.API/
+│ ├── Controllers/ # API endpoints
+│ ├── Models/ # Data models
+│ ├── DTOs/ # Transfer objects
+│ ├── Services/ # Business logic
+│ ├── Data/ # DB context/seeding
+│ └── Program.cs # App startup
 ├── WEB/
-│   └── src/
-│       ├── app/
-│       │   ├── components/      # Reusable components
-│       │   ├── pages/           # Page components
-│       │   ├── services/        # API services
-│       │   ├── models/          # TypeScript models
-│       │   ├── guards/          # Route guards
-│       │   └── interceptors/    # HTTP interceptors
-│       └── environments/        # Environment configurations
-└── JobFindan.sln               # Visual Studio solution file
-```
+│ └── src/
+│ ├── app/
+│ │ ├── components/ # UI components
+│ │ ├── pages/ # Main pages
+│ │ ├── services/ # API integration
+│ │ ├── models/ # TypeScript interfaces
+│ │ ├── guards/ # Route protection
+│ │ └── interceptors/ # HTTP middleware
+│ └── environments/ # Env configs
+└── JobFindan.sln # Solution file
 
-## Getting Started
+yaml
+Copy
+Edit
 
-### Prerequisites
-- .NET 8.0 SDK
-- Node.js (v18 or higher)
-- Visual Studio or JetBrains Rider
+---
 
-### Setup Instructions
+## ⚙️ Getting Started
 
-1. **Clone the repository**
-   ```bash
-   git clone <repository-url>
-   cd JobPortal
-   ```
+### ✅ Prerequisites
+- [.NET 8.0 SDK](https://dotnet.microsoft.com/en-us/download)
+- [Node.js v18+](https://nodejs.org/)
+- Visual Studio / JetBrains Rider
 
-2. **Backend Setup**
-   ```bash
-   cd API/JobFindan.API
-   dotnet restore
-   dotnet run
-   ```
-   The API will be available at `https://localhost:7001`
+---
 
-3. **Frontend Setup**
-   ```bash
-   cd WEB
-   npm install
-   npm start
-   ```
-   The Angular app will be available at `http://localhost:4200`
+### 📦 Installation & Setup
 
-### Default Admin Account
-- **Username**: admin
-- **Password**: admin123
+#### 1️⃣ Clone the Repo
+```bash
+git clone <repository-url>
+cd JobFindan
+2️⃣ Run the Backend
+bash
+Copy
+Edit
+cd API/JobFindan.API
+dotnet restore
+dotnet run
+➡️ API will run at https://localhost:7001
 
-## API Endpoints
+3️⃣ Run the Frontend
+bash
+Copy
+Edit
+cd WEB
+npm install
+npm start
+➡️ Frontend will run at http://localhost:4200
 
-### Authentication
-- `POST /api/auth/register` - Register new user
-- `POST /api/auth/login` - User login
+🔐 Default Admin Account
+Username: admin
 
-### Jobs
-- `GET /api/jobs` - Get all jobs (with search and filters)
-- `GET /api/jobs/{id}` - Get job by ID
-- `POST /api/jobs` - Create job (Admin only)
-- `PUT /api/jobs/{id}` - Update job (Admin only)
-- `DELETE /api/jobs/{id}` - Delete job (Admin only)
+Password: admin123
 
-### Applications
-- `POST /api/applications/submit/{jobId}` - Submit application
-- `GET /api/applications/my-applications` - Get user's applications
-- `GET /api/applications` - Get all applications (Admin only)
-- `PUT /api/applications/{id}/status` - Update application status (Admin only)
+🌐 API Overview
+🔑 Authentication
+Method	Endpoint	Description
+POST	/api/auth/register	Register user
+POST	/api/auth/login	Login user
 
-## Features in Detail
+📄 Job Management
+Method	Endpoint	Description
+GET	/api/jobs	List all jobs
+GET	/api/jobs/{id}	Job details by ID
+POST	/api/jobs	Create job (Admin only)
+PUT	/api/jobs/{id}	Edit job (Admin only)
+DELETE	/api/jobs/{id}	Delete job (Admin only)
 
-### User Authentication & Authorization
-- JWT-based authentication with role-based access control
-- Secure password hashing using BCrypt
-- Protected routes and API endpoints based on user roles
+📨 Applications
+Method	Endpoint	Description
+POST	/api/applications/submit/{jobId}	Submit application
+GET	/api/applications/my-applications	User's applications
+GET	/api/applications	View all applications (Admin only)
+PUT	/api/applications/{id}/status	Update status (Admin only)
 
-### Job Management
-- Create, read, update, and delete job postings
-- Rich job information including title, company, description, salary, type, location
-- Job status management (Active/Inactive)
-- Search and filtering capabilities
+📌 Key Features (In Detail)
+🔐 Authentication & Security
+JWT + BCrypt for secure login
 
-### Application System
-- One-click job application for users
-- Prevents duplicate applications to the same job
-- Application status tracking and management
-- Admin interface for managing all applications
+Role-based access (User/Admin)
 
-### Modern UI/UX
-- Responsive design that works on all devices
-- Clean, professional interface inspired by leading job portals
-- Intuitive navigation and user experience
-- Modern color scheme with orange/gradient theme
+Route protection via Angular guards
 
-## Database Schema
+Secure CORS and input validation
 
-### Users
-- User profiles with authentication credentials
-- Role-based access (User/Admin)
-- Personal information storage
+🧾 Job Listings
+CRUD job management
 
-### JobPostings
-- Comprehensive job information
-- Company details and requirements
-- Status management
+Filters by location, type, title
 
-### Applications
-- Links users to job postings
-- Application status tracking
-- Submission and update timestamps
+Job status control (Active/Inactive)
 
-## Security Features
-- Password hashing and salting
-- JWT token-based authentication
-- Role-based authorization
-- CORS configuration for secure cross-origin requests
-- Input validation and sanitization
+📬 Applications
+One-click apply
 
-## Development Notes
-- Clean architecture with separation of concerns
-- Repository pattern with Entity Framework
-- Reactive programming with RxJS in Angular
-- Comprehensive error handling and validation
-- Modern development practices and patterns
+Duplicate submission prevention
 
-## Contributing
-1. Fork the repository
-2. Create a feature branch
-3. Make your changes
-4. Submit a pull request
+Real-time status tracking (Submitted, Interview, Rejected)
 
-## License
-This project is licensed under the MIT License.
+💻 UI/UX Design
+Fully responsive (desktop/mobile/tablet)
+
+Gradient + orange theme
+
+Clean layout and intuitive navigation
+
+🗃️ Database Schema
+👤 Users
+Username, email, hashed password
+
+Role: User or Admin
+
+💼 JobPostings
+Title, description, company, location, type, salary
+
+Active/Inactive status
+
+📄 Applications
+Linked user and job IDs
+
+Status tracking (with timestamps)
+
+🛡️ Security Highlights
+🔐 Hashed passwords (BCrypt)
+
+🔑 JWT-based session auth
+
+🔒 Role-based route/API protection
+
+🧼 Sanitized inputs and CORS-configured
