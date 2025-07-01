@@ -1,4 +1,4 @@
-# JobPortal - Job Search and Application System
+# JobFindan - Job Search and Application System
 
 A full-stack job portal application built with Angular frontend and ASP.NET Core backend, featuring modern UI design and comprehensive functionality for both job seekers and administrators.
 
@@ -36,9 +36,9 @@ A full-stack job portal application built with Angular frontend and ASP.NET Core
 ## Project Structure
 
 ```
-JobPortal/
+JobFindan/
 ├── API/
-│   └── JobPortal.API/
+│   └── JobFindan.API/
 │       ├── Controllers/          # API controllers
 │       ├── Models/              # Data models
 │       ├── DTOs/                # Data transfer objects
@@ -55,7 +55,7 @@ JobPortal/
 │       │   ├── guards/          # Route guards
 │       │   └── interceptors/    # HTTP interceptors
 │       └── environments/        # Environment configurations
-└── JobPortal.sln               # Visual Studio solution file
+└── JobFindan.sln               # Visual Studio solution file
 ```
 
 ## Getting Started
@@ -75,7 +75,7 @@ JobPortal/
 
 2. **Backend Setup**
    ```bash
-   cd API/JobPortal.API
+   cd API/JobFindan.API
    dotnet restore
    dotnet run
    ```
