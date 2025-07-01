@@ -16,10 +16,10 @@ import { JobPosting } from '../../models/job.model';
       <div class="gradient-bg hero-pattern">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
           <div class="text-center">
-            <h1 class="text-4xl md:text-5xl font-bold text-white mb-4">
+            <h1 class="text-4xl md:text-5xl font-bold text-white mb-4" style="color:black">
               The Right Job is Waiting for You
             </h1>
-            <p class="text-xl text-orange-100 mb-8">
+            <p class="text-xl text-orange-100 mb-8" style="color:orange">
               Explore thousands of jobs and take the next step in your career today!
             </p>
             
@@ -90,17 +90,11 @@ import { JobPosting } from '../../models/job.model';
             <div class="bg-gradient-to-br from-orange-400 to-red-500 rounded-xl p-6 text-white">
               <div class="flex items-center mb-2">
                 <span class="text-lg">⭐</span>
-                <span class="ml-2 font-bold">Smart Auto-Apply!</span>
+                <span class="ml-2 font-bold">Easy, Fast and Efficient</span>
               </div>
-              <p class="text-sm opacity-90 mb-4">
-                Let AI apply for jobs on your behalf. Our smart automation ensures you never miss a great opportunity.
-              </p>
-              <button class="bg-white text-orange-500 px-4 py-2 rounded-lg text-sm font-medium hover:bg-orange-50 transition-colors">
-                Try Our AI Automation!
-              </button>
             </div>
           </div>
-
+		
           <!-- Job Listings -->
           <div class="flex-1">
             <div class="flex justify-between items-center mb-6">
