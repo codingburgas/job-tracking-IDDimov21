@@ -29,4 +29,8 @@ export class ApplicationService {
   updateApplicationStatus(id: number, request: UpdateApplicationStatusRequest): Observable<Application> {
     return this.http.put<Application>(`${environment.apiUrl}/applications/${id}/status`, request);
   }
+
+  deleteRejectedApplication(id: number): Observable<void> {
+    return this.http.delete<void>(`${environment.apiUrl}/applications/applicant-delete/${id}`);
+  }
 }

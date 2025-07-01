@@ -16,7 +16,7 @@ import { Application, ApplicationStatus } from '../../models/application.model';
 
       <!-- Applications List -->
       <div class="space-y-6">
-        <div *ngFor="let application of applications" class="card">
+        <div *ngFor="let application of applications" class="card border rounded-lg p-4 shadow-sm bg-white">
           <div class="flex items-start justify-between">
             <div class="flex items-start space-x-4">
               <!-- Company Logo Placeholder -->
@@ -34,13 +34,22 @@ import { Application, ApplicationStatus } from '../../models/application.model';
               </div>
             </div>
             
-            <div class="flex items-center space-x-4">
+            <div class="flex flex-col items-end space-y-2">
               <span 
                 class="px-3 py-1 rounded-full text-sm font-medium"
                 [ngClass]="getStatusClass(application.status)"
               >
                 {{ getStatusText(application.status) }}
               </span>
+
+              <!-- Show Delete Button if Rejected -->
+              <button
+                *ngIf="application.status === ApplicationStatus.Rejected"
+                (click)="deleteApplication(application.id)"
+                class="text-sm text-red-600 hover:underline mt-1"
+              >
+                Delete
+              </button>
             </div>
           </div>
         </div>
@@ -68,6 +77,7 @@ import { Application, ApplicationStatus } from '../../models/application.model';
 export class ApplicationsComponent implements OnInit {
   applications: Application[] = [];
   loading = false;
+  ApplicationStatus = ApplicationStatus; // 👈 To use enum in template
 
   constructor(private applicationService: ApplicationService) {}
 
@@ -85,6 +95,17 @@ export class ApplicationsComponent implements OnInit {
       error: (error) => {
         console.error('Error loading applications:', error);
         this.loading = false;
+      }
+    });
+  }
+
+  deleteApplication(id: number): void {
+    this.applicationService.deleteRejectedApplication(id).subscribe({
+      next: () => {
+        this.applications = this.applications.filter(app => app.id !== id);
+      },
+      error: (err: any) => {
+        console.error('Failed to delete application:', err);
       }
     });
   }
