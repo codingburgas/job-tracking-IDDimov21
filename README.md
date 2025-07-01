@@ -39,7 +39,7 @@ A modern, full-stack **job portal application** built with **Angular** and **ASP
 ---
 
 ## 📁 Project Structure
-
+```
 JobFindan/
 ├── API/
 │ └── JobFindan.API/
@@ -60,11 +60,7 @@ JobFindan/
 │ │ └── interceptors/ # HTTP middleware
 │ └── environments/ # Env configs
 └── JobFindan.sln # Solution file
-
-yaml
-Copy
-Edit
-
+```
 ---
 
 ## ⚙️ Getting Started
@@ -79,22 +75,15 @@ Edit
 ### 📦 Installation & Setup
 
 #### 1️⃣ Clone the Repo
-```bash
 git clone <repository-url>
 cd JobFindan
 2️⃣ Run the Backend
-bash
-Copy
-Edit
 cd API/JobFindan.API
 dotnet restore
 dotnet run
 ➡️ API will run at https://localhost:7001
 
 3️⃣ Run the Frontend
-bash
-Copy
-Edit
 cd WEB
 npm install
 npm start
