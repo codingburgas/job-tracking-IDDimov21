@@ -73,10 +73,11 @@ JobFindan/
 ---
 
 ### 📦 Installation & Setup
-
+```bash
 #### 1️⃣ Clone the Repo
+
 git clone <repository-url>
-cd JobFindan
+cd JobFindan 
 2️⃣ Run the Backend
 cd API/JobFindan.API
 dotnet restore
@@ -88,7 +89,7 @@ cd WEB
 npm install
 npm start
 ➡️ Frontend will run at http://localhost:4200
-
+```
 🔐 Default Admin Account
 Username: admin
 
