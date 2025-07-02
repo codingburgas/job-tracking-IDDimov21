@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("JobFindan.API")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+2328df8a065f78d79818db830602c5c8ee70fa3c")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+63f5f237d52a2cd4cabfd4712d0de92b3251d272")]
 [assembly: System.Reflection.AssemblyProductAttribute("JobFindan.API")]
 [assembly: System.Reflection.AssemblyTitleAttribute("JobFindan.API")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

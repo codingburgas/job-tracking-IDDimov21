@@ -16,7 +16,7 @@ namespace JobFindan.API.Controllers
     public class ApplicationsController : ControllerBase
     {
         private readonly IApplicationService _applicationService;
-        private readonly ApplicationDbContext _context; // Add DbContext for direct DB access (optional)
+        private readonly ApplicationDbContext _context; // Add DbContext for direct DB access 
 
         public ApplicationsController(IApplicationService applicationService, ApplicationDbContext context)
         {
@@ -74,7 +74,7 @@ namespace JobFindan.API.Controllers
             return Ok(application);
         }
 
-        // 🔴 NEW: Endpoint for applicants to delete their own rejected applications
+        //Endpoint for applicants to delete their own rejected applications
         [HttpDelete("applicant-delete/{id}")]
         [Authorize(Roles = "User")]
         public async Task<IActionResult> DeleteRejectedByApplicant(int id)
@@ -94,7 +94,7 @@ namespace JobFindan.API.Controllers
             return NoContent();
         }
 
-        // 🔴 OPTIONAL: Add admin rejection shortcut that sets status to Rejected
+        //Add admin rejection shortcut that sets status to Rejected
         [HttpPut("{id}/reject")]
         [Authorize(Roles = "Admin")]
         public async Task<IActionResult> RejectApplication(int id)

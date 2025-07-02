@@ -1,23 +1,23 @@
 {
   "format": 1,
   "restore": {
-    "F:\\App\\job-tracking-IDDimov21\\API\\JobFindan.API\\JobFindan.API.csproj": {}
+    "C:\\Users\\IDDimov21\\RiderProjects\\job-tracking-IDDimov21\\JobFindan\\API\\JobFindan.API\\JobFindan.API.csproj": {}
   },
   "projects": {
-    "F:\\App\\job-tracking-IDDimov21\\API\\JobFindan.API\\JobFindan.API.csproj": {
+    "C:\\Users\\IDDimov21\\RiderProjects\\job-tracking-IDDimov21\\JobFindan\\API\\JobFindan.API\\JobFindan.API.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "F:\\App\\job-tracking-IDDimov21\\API\\JobFindan.API\\JobFindan.API.csproj",
+        "projectUniqueName": "C:\\Users\\IDDimov21\\RiderProjects\\job-tracking-IDDimov21\\JobFindan\\API\\JobFindan.API\\JobFindan.API.csproj",
         "projectName": "JobFindan.API",
-        "projectPath": "F:\\App\\job-tracking-IDDimov21\\API\\JobFindan.API\\JobFindan.API.csproj",
-        "packagesPath": "C:\\Users\\gamin\\.nuget\\packages\\",
-        "outputPath": "F:\\App\\job-tracking-IDDimov21\\API\\JobFindan.API\\obj\\",
+        "projectPath": "C:\\Users\\IDDimov21\\RiderProjects\\job-tracking-IDDimov21\\JobFindan\\API\\JobFindan.API\\JobFindan.API.csproj",
+        "packagesPath": "C:\\Users\\IDDimov21\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\IDDimov21\\RiderProjects\\job-tracking-IDDimov21\\JobFindan\\API\\JobFindan.API\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
-          "D:\\VS\\Shared\\NuGetPackages"
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\gamin\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\IDDimov21\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
@@ -88,6 +88,24 @@
           ],
           "assetTargetFallback": true,
           "warn": true,
+          "downloadDependencies": [
+            {
+              "name": "Microsoft.AspNetCore.App.Ref",
+              "version": "[8.0.11, 8.0.11]"
+            },
+            {
+              "name": "Microsoft.NETCore.App.Host.win-x64",
+              "version": "[8.0.11, 8.0.11]"
+            },
+            {
+              "name": "Microsoft.NETCore.App.Ref",
+              "version": "[8.0.11, 8.0.11]"
+            },
+            {
+              "name": "Microsoft.WindowsDesktop.App.Ref",
+              "version": "[8.0.11, 8.0.11]"
+            }
+          ],
           "frameworkReferences": {
             "Microsoft.AspNetCore.App": {
               "privateAssets": "none"
@@ -96,7 +114,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.405/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.101/PortableRuntimeIdentifierGraph.json"
         }
       }
     }
